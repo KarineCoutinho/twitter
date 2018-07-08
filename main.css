@@ -24,12 +24,13 @@ header{
     background-image: url(birdsFlying.png);
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position-y: -5vw;
-    height: 42.4vw;
+    min-height: 42.4vw;
+    height: auto;
     width: 100%;
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 2vw;
 }
 form{
@@ -43,7 +44,7 @@ form{
     position: relative;
 
 }
-input{
+.tweetText{
     height: auto;
     min-height: 6vw;
     border-top: 0px;
@@ -62,4 +63,11 @@ input{
     color: white;
     font-size: 2vw;
     margin-top: 1vw;
+}
+p{
+    width: 50%;
+    height: auto;
+    background-color: white;
+    padding: 1vw;
+    position: relative;
 }

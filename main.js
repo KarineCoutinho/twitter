@@ -1,13 +1,21 @@
-// Criamos o novo parágrago depois
+var submitTwitter = document.querySelector ('button');
+submitTwitter.onclick = function(event){
+    var inputTwitter = document.querySelector('input');
+    var backgroundImgContainer = document.getElementById('backgroundImgContainer'); 
+    var tweets = document.createElement('p');
+    tweets.textContent = inputTwitter.value;
+    backgroundImgContainer.appendChild(tweets);
+    event.preventDefault();
+}
 
-var tweets = document.createElement('p');
 
-var newTweet = document.createTextNode('input');
-newTweet.appendChild(tweets);
 
-// Armazenamos em uma varipavel o pai e em outra variável o segundo parágrafo
-var twitterPage = document.getElementById('twitterPage');
-var inputTwitter = twitterPage.getElementsByTagName('input')[1];
 
-// Agora inserimos depois
-twitterPage.insertBefore(tweets, inputTwitter);
+
+
+
+
+
+
+
+
