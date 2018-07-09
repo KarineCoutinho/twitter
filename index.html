@@ -11,12 +11,18 @@
 <body>
     <section id="twitterPage">
         <header>Twitter</header>
-        <div id="backgroundImgContainer">
-            <div class="backgroundImg">
+        <div class="backgroundImg">
+        </div>
+        <div id="mainDivContainer">
+            <div class="mainDiv profile">
+                <h1>Olaaar abigos, turobom?</h1>
             </div>
-            <form action="">
-                <input class="tweetText" type="text" placeholder="O que está pensando?">
-                <button class="tweetButton" type="submit" onclick ="clickTweet()" >Tweet</button>
+            <form class="mainDiv tweetForm" action="" type="submit">
+                <textarea class="tweetText" placeholder="What's happennig?"></textarea>
+                <div class=buttonCount>
+                    <button class="tweetButton" type="submit"  onclick ="clickTweet()"  disabled>Tweet</button>
+                    <h5 id="counter">140</h5>
+                </div>
             </form>
         </div>
     </section>

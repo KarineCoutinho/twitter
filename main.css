@@ -3,13 +3,6 @@ body{
     padding: 0;
     margin: 0;
 }
-/* #twitterPage{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: space-between;
-    width: 100%;
-} */
 header{
     height: 6vw;
     width: 100%;
@@ -20,21 +13,27 @@ header{
     padding: 0;
     margin: 0;
 }
-#backgroundImgContainer{
+#twitterPage{
     background-image: url(birdsFlying.png);
     background-repeat: no-repeat;
     background-size: 100%;
-    min-height: 42.4vw;
+    background-position-y: 6vw;
+    min-height: 48.4vw;
     height: auto;
     width: 100%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 2vw;
+    justify-content: flex-start;
+    align-items: center;  
 }
-form{
-    width: 50%;
+#mainDivContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.mainDiv{
+    width: 30%;
     height: 11vw;
     display: flex;
     flex-direction: column;
@@ -42,19 +41,27 @@ form{
     background-color: white;
     padding: 1vw;
     position: relative;
-
+    margin: 1vw;
 }
 .tweetText{
-    height: auto;
-    min-height: 6vw;
+    height: fit-content;
+    min-height: 3vw;
     border-top: 0px;
     border-left: 0;
     border-right: 0;
     border-bottom: 2px;
     border-bottom-style: solid;
-    border-bottom-color:pink; 
- 
+    border-bottom-color:pink;
+    padding: 1vw;
+    outline: none;
+    resize: none;
+    overflow: hidden;
 }
+.tweetText:focus{
+    border: none;
+    outline: pink solid 2px;
+}
+
 .tweetButton{
     width: 7vw;
     height: 3vw;
@@ -64,8 +71,15 @@ form{
     font-size: 2vw;
     margin-top: 1vw;
 }
+.tweetButton:disabled{
+    background-color: rgba(255, 192, 203, 0.932);
+}
+.buttonCount{
+    display: flex;
+    justify-content: space-between;
+}
 p{
-    width: 50%;
+    width: 64%;
     height: auto;
     background-color: white;
     padding: 1vw;
