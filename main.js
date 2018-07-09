@@ -15,7 +15,17 @@ function countCharacters(){
     counting.innerHTML = characteresLeft;
     if(inputTwitterLength > 0){
         submitTwitter.disabled =false;
-    } 
+        if(inputTwitterLength > 120){
+            counting.style= "color: purple";
+        }
+        if(inputTwitterLength > 130){
+            counting.style= "color: violet";
+        }
+        if(inputTwitterLength > 140  ){
+            counting.style= "color: red";
+            submitTwitter.disabled =true;
+        } 
+    }
 }
 
 //publicando os Twitter
