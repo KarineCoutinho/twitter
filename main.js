@@ -4,13 +4,13 @@ var inputTwitter = document.querySelector('.tweetText');
 var twitterForm = document.querySelector('.tweetForm');
 
 
+
 //contando caracteres
 var counting = document.querySelector('#counter');
 inputTwitter.addEventListener('keyup', countCharacters);
-
+var maxCharacters =140;
 function countCharacters(){ 
     var inputTwitterLength = inputTwitter.value.length;
-    var maxCharacters =140;
     var characteresLeft = maxCharacters - inputTwitterLength;
     counting.innerHTML = characteresLeft;
     if(inputTwitterLength > 0){
@@ -28,6 +28,14 @@ function countCharacters(){
     }
 }
 
+//aumento área do texto
+inputTwitter.addEventListener('keydown', autoResize);
+function autoResize(){
+    while (inputTwitter.scrollHeight > inputTwitter.offsetHeight){
+        inputTwitter.rows += 1;
+    }
+}
+
 //publicando os Twitter
 submitTwitter.onclick = function(event){
     var twitterPage = document.getElementById('twitterPage'); 
@@ -36,7 +44,7 @@ submitTwitter.onclick = function(event){
     twitterPage.appendChild(tweets);
     event.preventDefault(); 
     twitterForm.reset();
-    counting.innerHTML = '140';
+    counting.innerHTML = maxCharacters;
     submitTwitter.disabled = true;
 }
 

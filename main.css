@@ -31,10 +31,10 @@ header{
     display: flex;
     justify-content: center;
     width: 100%;
+    height: auto;
 }
 .mainDiv{
     width: 30%;
-    height: 11vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -42,9 +42,17 @@ header{
     padding: 1vw;
     position: relative;
     margin: 1vw;
+    border: 1px solid red;
+}
+.tweetForm{
+    height: auto;
+    min-height: 11vw;
+}
+.profile{
+    height: 11vw !important;
 }
 .tweetText{
-    height: fit-content;
+    height: auto;
     min-height: 3vw;
     border-top: 0px;
     border-left: 0;
@@ -72,7 +80,8 @@ header{
     margin-top: 1vw;
 }
 .tweetButton:disabled{
-    background-color: rgba(255, 192, 203, 0.932);
+    background-color: pink;
+    color: gray;
 }
 .buttonCount{
     display: flex;
