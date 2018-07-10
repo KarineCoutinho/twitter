@@ -14,7 +14,7 @@ header{
     margin: 0;
 }
 #twitterPage{
-    background-image: url(birdsFlying.png);
+    background-image: url(images/birdsFlying.png);
     background-repeat: no-repeat;
     background-size: 100%;
     background-position-y: 6vw;
@@ -28,6 +28,19 @@ header{
     align-items: center;  
 }
 
+img{
+    border-radius: 100%;
+    width: 11vw;
+    height: 11vw;
+}
+.follow{
+    width: 7vw;
+    height: 3vw;
+    border: 0;
+    background-color: pink;
+    color: #fafafa; 
+    font-size: 2vw;
+}
 #mainDivContainer{
     display: flex;
     justify-content: center;
@@ -50,6 +63,8 @@ header{
     min-height: 11vw;
 }
 .profile{
+    display: flex;
+    flex-direction: row;
     height: 11vw !important;
 }
 .tweetText{
@@ -98,7 +113,8 @@ header{
     border-radius:1vw;
     margin-top:1vw;  
 }
-p{
+.newTweet{
     border-bottom: 1px solid black;
     padding: 0.5vw;
+    font-weight: 900;
 }

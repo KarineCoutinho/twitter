@@ -7,15 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link href="https://fonts.googleapis.com/css?family=Belgrano" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 </head>
 <body>
     <section id="twitterPage">
-        <header>Twitter</header>
+        <header><i class="fab fa-twitter"></i> Twitter</header>
         <div class="backgroundImg">
         </div>
         <div id="mainDivContainer">
             <div class="mainDiv profile">
-                <h1>Olaaar abigos, turobom?</h1>
+                <div>
+                    <img src="images/profilePic.jpg">
+                </div>
+                <div>
+                    <h2>Karine Coutinho</br>26 anos</h2>
+                    <button type="submit" class="follow" disabled>Follow me</input>
+                </div>
             </div>
             <form class="mainDiv tweetForm" action="" type="submit">
                 <textarea class="tweetText" placeholder="What's happennig?" onkeydown="autoResize()"></textarea>

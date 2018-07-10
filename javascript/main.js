@@ -41,10 +41,10 @@ function submit (){
     var tweets = document.createElement('div');
     tweets.classList.add("myTweet");
     var newTweet = document.createElement('p');
+    newTweet.classList.add("newTweet");
     var date = document.createElement('small');
 
     newTweet.textContent = inputTwitter.value;
-
     date.textContent = moment().format('MMMM Do YYYY, HH:mm');
 
     twitterPage.appendChild(tweets);
