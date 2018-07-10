@@ -3,8 +3,6 @@ var submitTwitter = document.querySelector ('.tweetButton');
 var inputTwitter = document.querySelector('.tweetText');
 var twitterForm = document.querySelector('.tweetForm');
 
-
-
 //contando caracteres
 var counting = document.querySelector('#counter');
 inputTwitter.addEventListener('keyup', countCharacters);
@@ -37,12 +35,24 @@ function autoResize(){
 }
 
 //publicando os Twitter
-submitTwitter.onclick = function(event){
+submitTwitter.addEventListener('click', submit);
+function submit (){
     var twitterPage = document.getElementById('twitterPage'); 
-    var tweets = document.createElement('p');
-    tweets.textContent = inputTwitter.value;
+    var tweets = document.createElement('div');
+    tweets.classList.add("myTweet");
+    var newTweet = document.createElement('p');
+    var date = document.createElement('small');
+
+    newTweet.textContent = inputTwitter.value;
+
+    date.textContent = moment().format('MMMM Do YYYY, HH:mm');
+
     twitterPage.appendChild(tweets);
+    tweets.appendChild(newTweet);
+    tweets.appendChild(date);
+
     event.preventDefault(); 
+
     twitterForm.reset();
     counting.innerHTML = maxCharacters;
     submitTwitter.disabled = true;
