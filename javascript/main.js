@@ -32,9 +32,13 @@ function autoResize(){
     while (inputTwitter.scrollHeight > inputTwitter.offsetHeight){
         inputTwitter.rows += 1;
     }
+    while (inputTwitter.scrollHeight < inputTwitter.offsetHeight){
+        inputTwitter.rows -= 1;
+    }
 }
 
 //publicando os Twitter
+//colando data
 submitTwitter.addEventListener('click', submit);
 function submit (){
     var twitterPage = document.getElementById('twitterPage'); 
@@ -55,6 +59,8 @@ function submit (){
 
     twitterForm.reset();
     counting.innerHTML = maxCharacters;
+    counting.style = "color:black";
+    inputTwitter.style = "heigth: 3vw";
     submitTwitter.disabled = true;
 }
 
