@@ -1,4 +1,3 @@
-
 var submitTwitter = document.querySelector ('.tweetButton');
 var inputTwitter = document.querySelector('.tweetText');
 var twitterForm = document.querySelector('.tweetForm');
@@ -12,6 +11,7 @@ function countCharacters(){
     var characteresLeft = maxCharacters - inputTwitterLength;
     counting.innerHTML = characteresLeft;
     if(inputTwitterLength > 0){
+        counting.style= "color: black";
         submitTwitter.disabled =false;
         if(inputTwitterLength > 120){
             counting.style= "color: purple";
@@ -31,7 +31,7 @@ inputTwitter.addEventListener('keydown', autoResize);
 function autoResize(){
     if(inputTwitter.value.length !== 0){
         setTimeout(function(){
-            inputTwitter.style= "height:auto; padding: 0";
+            inputTwitter.style= "height:auto; padding:0";
             inputTwitter.style= "height:" + inputTwitter.scrollHeight + "px";
         },0);
     } else{
@@ -54,7 +54,7 @@ function submit (){
     date.textContent = moment().format('MMMM Do YYYY, HH:mm');
 
     twitterPage.appendChild(tweets);
-    tweets.prependChild(newTweet);
+    tweets.appendChild(newTweet);
     tweets.appendChild(date);
 
     event.preventDefault(); 
@@ -64,13 +64,4 @@ function submit (){
     counting.style = "color:black";
     inputTwitter.style = "heigth: 3vw";
     submitTwitter.disabled = true;
-    autoResize();
 }
-
-
-
-
-
-
-
-
