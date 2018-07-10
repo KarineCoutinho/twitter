@@ -29,11 +29,13 @@ function countCharacters(){
 //aumento área do texto
 inputTwitter.addEventListener('keydown', autoResize);
 function autoResize(){
-    while (inputTwitter.scrollHeight > inputTwitter.offsetHeight){
-        inputTwitter.rows += 1;
-    }
-    while (inputTwitter.scrollHeight < inputTwitter.offsetHeight){
-        inputTwitter.rows -= 1;
+    if(inputTwitter.value.length !== 0){
+        setTimeout(function(){
+            inputTwitter.style= "height:auto; padding: 0";
+            inputTwitter.style= "height:" + inputTwitter.scrollHeight + "px";
+        },0);
+    } else{
+        inputTwitter.removeAttribute("style");
     }
 }
 
@@ -52,7 +54,7 @@ function submit (){
     date.textContent = moment().format('MMMM Do YYYY, HH:mm');
 
     twitterPage.appendChild(tweets);
-    tweets.appendChild(newTweet);
+    tweets.prependChild(newTweet);
     tweets.appendChild(date);
 
     event.preventDefault(); 
@@ -62,6 +64,7 @@ function submit (){
     counting.style = "color:black";
     inputTwitter.style = "heigth: 3vw";
     submitTwitter.disabled = true;
+    autoResize();
 }
 
 
